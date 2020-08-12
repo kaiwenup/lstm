@@ -25,7 +25,7 @@ model.add(Dense(1))
 # loss:the loss function used to evaluate the network that is minimized by the optimization algorithm
 model.compile(loss='mae', optimizer='adam')
 
-history = model.fit(train_X, train_y, epochs=50, batch_size=72, validation_data=(test_X, test_y))
+history = model.fit(train_X, train_y, epochs=100, batch_size=72, validation_data=(test_X, test_y))
 # 运行的时候不显示相关打印信息
 #history = model.fit(train_X, train_y, epochs=50, batch_size=72, validation_data=(test_X, test_y),verbose=0)
 # 数据可视化
