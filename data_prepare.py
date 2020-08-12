@@ -43,11 +43,13 @@ def parsedate(x):
 
 
 #raw_data = pd.read_csv(RAW_DATA, parse_dates=[['year', 'month', 'day', 'hour']], index_col=0, date_parser=parsedate)
+#读取数据，然后将表头加入数据中
 raw_data = pd.read_csv(RAW_DATA_2,
                      header=None, # 指定行数用来作为列名，数据开始行数。如果文件中没有列名，则默认为0，否则设置为None。
                      names=column_names)
 # 去掉原始数据的No列
 #raw_data.drop('No', axis=1, inplace=True)
+# 去掉原始数据的user-id列，暂时用不到
 raw_data.drop('user-id', axis=1, inplace=True)
 # 指定列名
 #raw_data.columns = ['pollution', 'dew', 'temp', 'press', 'wnd_dir', 'wnd_spd', 'snow', 'rain']

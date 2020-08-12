@@ -45,15 +45,15 @@ scaled = scaler.fit_transform(values)
 # 将序列数据转化为监督学习数据
 reframed = series_to_supervised(scaled, dataset_columns, 1, 1)
 # 因为只是通过t-1时刻的数据预测t时刻的数据，所以删除了t时刻除pollution的数据，也就是9～15列的数据
-#print(reframed)
+print(reframed)
 
 
 df_id=reframed.ix[:,5]
-
+# 用（t-1）（t）的数据来预测activity（t）
 reframed.drop(reframed.columns[[0, 1, 5, 6]], axis=1, inplace=True)
 reframed.insert(6,'activity1(t)',df_id)
 
-
+# 用（t-1）的数据来预测activity（t）
 #reframed.drop(reframed.columns[[0, 1, 5, 6, 7, 8, 9]], axis=1, inplace=True)
 #reframed.insert(3,'activity1(t)',df_id)
 
