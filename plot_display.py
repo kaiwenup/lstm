@@ -1,12 +1,6 @@
 #!usr/bin/env python
 # -*- coding: utf-8 -*-
 
-"""
-Time:17/1/1
----------------------------
-Question: 读取处理过的文件数据并绘图
----------------------------
-"""
 import pandas as pd
 import matplotlib.pyplot as plt
 from model.util import  RAW_DATA_2
